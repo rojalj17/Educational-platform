@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnify Career Academy</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .heading {
+            font-size: 30px;
+
+        }
+
+        /* login modal */
+        .modal-header {
+            border-bottom: none;
+            
+        }
+        
+        .modal-content {
+            border-radius: 8px;
+        }
+
+        .btn-social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .btn-social img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+            margin: 0 10px;
+        }
+        .hero {
+            background-color: rgb(116, 133, 202);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+        }
+
+        .hero .btn {
+            font-size: 1.1rem;
+            padding: 10px 30px;
+        }
+
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .cta {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta .btn {
+            font-size: 1.2rem;
+            padding: 15px 30px;
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand text-primary heading" href="./index.html">Learnify</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="explore.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark  " data-bs-toggle="modal" data-bs-target="#loginModal"
+                            href="./programs.html">Log In</a>
+                    </li>
+                    <button data-bs-toggle="modal" data-bs-target="#signUpModal">Join For free</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Modal for log in -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="loginModalLabel">Welcome back</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@email.com">
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Enter your password">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <a href="#" class="text-decoration-none d-block mt-2">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+                    </form>
+                    <div class="divider">or</div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                            Google
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook">
+                            Facebook
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGwnqOoimbGVauO_Epd7KSg2yiULj9joRsGw&s"
+                                alt="Apple">
+                            Apple
+                        </button>
+                    </div>
+                    <p class="text-center mt-3">
+                        New to the platform? <a href="#" class="text-decoration-none">Sign up</a>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="text-decoration-none mx-auto">Log in with your organization</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal join for free -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title " id="signUpModalLabel">Sign up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Learn on your own time from top universities and businesses.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@email.com">
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" placeholder="Create password">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <small class="form-text text-muted">Between 8 and 72 characters</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Join for Free</button>
+                    </form>
+                    <div class="divider">or</div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                            Google
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook">
+                            Facebook
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGwnqOoimbGVauO_Epd7KSg2yiULj9joRsGw&s" alt="
+                                Apple">
+                            Apple
+                        </button>
+                    </div>
+                    <p class="text-center mt-3">
+                        Already on Coursera? <a href="#" class="text-decoration-none">Log in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Learnify Career Academy</h1>
+        <p>Unlock your potential with job-ready certificates designed by top companies and universities.</p>
+        <a href="#courses" class="btn btn-primary btn-lg">Explore Programs</a>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Explore Our Career Paths</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/1Z2h61l00YMxiMD8Xu7sHw/669880819cd3c5eac5a5fd08606679d1/data-analyst-role-card_2x.png?auto=format%2Ccompress&dpr=1&w=430" class="card-img-top" alt="Data Analytics">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analytics</h5>
+                            <p class="card-text">Gain skills to analyze data and solve complex business problems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/2okXQwMsMaDLsff3uh3uUz/c619cf8860813538a005dbea25425df5/Data_Scientist-role-card_2x.png?auto=format%2Ccompress&dpr=1&w=430" class="card-img-top" alt="IT Support">
+                        <div class="card-body">
+                            <h5 class="card-title">IT Support</h5>
+                            <p class="card-text">Learn the fundamentals of IT and jumpstart your technology career.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/WslreKdXXAeCwERKLCllJ/64064536b4aba8be21f8cb5e9d4cf697/Cyber_Security_Analyst-role-card_2x.png?auto=format%2Ccompress&dpr=1&w=430" class="card-img-top" alt="UX Design">
+                        <div class="card-body">
+                            <h5 class="card-title">UX Design</h5>
+                            <p class="card-text">Master the art of user experience design and prototyping.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-4 ">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/529TZeL8qf9lRVTMIcKPAC/d3f0fea33c0e16076c64b608db7fd4fe/Social_Media_Strategist_-_Specialist-hero_2x.png?auto=format%2Ccompress&dpr=1&w=720" class="card-img-top" alt="Data Analytics">
+                        <div class="card-body">
+                            <h5 class="card-title">Social Media Strategist / Specialist</h5>
+                            <p class="card-text">A Social Media Strategist creates and executes social media campaigns to build brand awareness and engagement. They analyze metrics, optimize content, and manage platforms to enhance online presence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/69cNAmQMmrlgOZiqDhQ2cP/b53c174c81e14d7a4c1a5d307db9a128/Machine_Learning_Engineer-hero_2x.png?auto=format%2Ccompress&dpr=1&w=720" class="card-img-top" alt="IT Support">
+                        <div class="card-body">
+                            <h5 class="card-title">Machine Learning Engineer</h5>
+                            <p class="card-text">A Machine Learning Engineer builds and optimizes algorithms that enable computers to learn from data. They work with large datasets, develop models, and apply techniques.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 " >
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/3oJkUhDDdHYGFlblXamdg5/8c097f74e872f2fc73ed654247e06e09/Digital_Marketing_Specialist-hero_2x.png?auto=format%2Ccompress&dpr=1&w=720" class="card-img-top" alt="UX Design">
+                        <div class="card-body">
+                            <h5 class="card-title">Digital Marketing Specialist</h5>
+                            <p class="card-text">A Digital Marketing Specialist creates and manages online campaigns to drive engagement and conversions. They optimize SEO, SEM, and social media strategiesusing analytics tools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-4 ">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/jmD7vPI1cXvRnIypBB3Jy/6c4281b693792ca74cb90dc17cb267c7/Data_Architect-role-card_1X.png?auto=format%2Ccompress&dpr=1&w=430" class="card-img-top" alt="Data Analytics">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Architect</h5>
+                            <p class="card-text">A Data Architect designs and oversees data systems and structures. They ensure data is efficiently stored, secure, and accessible, using data modeling and database management techniques to support business objectives.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/Sv9XLpeio9RHRrjWydTOZ/8fcc90ec4342ad629fbe897c45f83314/Statistician-role-card_2x.png?auto=format%2Ccompress&dpr=1&w=430" class="card-img-top" alt="IT Support">
+                        <div class="card-body">
+                            <h5 class="card-title">Statistician</h5>
+                            <p class="card-text">A Statistician collects, analyzes, and interprets data to identify trends and patterns. They apply statistical methods to solve problems in fields like healthcare, finance, and government, providing actionable insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 " >
+                    <div class="card">
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/00atxywtfxvd/6avnH5aIWbiAX2JCI3PeaG/ab20caf9ec9832ad7548eb226a9c3355/Business_Intelligence_Analyst-role-card_2x.png?auto=format%2Ccompress&dpr=1&w=430" class="card-img-top" alt="UX Design">
+                        <div class="card-body">
+                            <h5 class="card-title">Business Intelligence Analyst</h5>
+                            <p class="card-text">A Business Intelligence Analyst gathers, analyzes, and visualizes data to support business decisions. They create reports using tools like Tableau or Power BI to drive strategy and improve organizational performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Why Choose Learnify Career Academy?</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="p-4 border rounded">
+                        <h5>Job-Ready Skills</h5>
+                        <p>Get practical, hands-on skills that prepare you for a competitive job market.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded">
+                        <h5>Professional Certificates</h5>
+                        <p>Earn certificates from globally recognized companies and universities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded">
+                        <h5>Flexible Learning</h5>
+                        <p>Learn at your own pace with fully online courses and flexible deadlines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta">
+        <h2 class="mb-3">Start Your Career Journey Today</h2>
+        <p class="mb-4">Join thousands of learners who have already unlocked new opportunities.</p>
+        <a href="#" class="btn btn-warning btn-lg">Get Started Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Lernify Career Academy | All rights reserved.</p>
+    </footer>
+
+    
+</body>
+
+</html>

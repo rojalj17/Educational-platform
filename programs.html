@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+        }
+
+        .heading {
+            font-size: 30px;
+
+        }
+
+        /* login modal */
+        .modal-header {
+            border-bottom: none;
+            
+        }
+        
+        .modal-content {
+            border-radius: 8px;
+        }
+
+        .btn-social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .btn-social img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+            margin: 0 10px;
+        }
+
+        .course-card img {
+            max-height: 150px;
+            object-fit: cover;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff9900;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+
+        .ai-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand text-primary heading" href="./index.html">Learnify</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="explore.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark  " data-bs-toggle="modal" data-bs-target="#loginModal"
+                            href="./programs.html">Log In</a>
+                    </li>
+                    <button data-bs-toggle="modal" data-bs-target="#signUpModal">Join For free</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Modal for log in -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="loginModalLabel">Welcome back</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@email.com">
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Enter your password">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <a href="#" class="text-decoration-none d-block mt-2">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+                    </form>
+                    <div class="divider">or</div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                            Google
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook">
+                            Facebook
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGwnqOoimbGVauO_Epd7KSg2yiULj9joRsGw&s"
+                                alt="Apple">
+                            Apple
+                        </button>
+                    </div>
+                    <p class="text-center mt-3">
+                        New to the platform? <a href="#" class="text-decoration-none">Sign up</a>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="text-decoration-none mx-auto">Log in with your organization</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal join for free -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title " id="signUpModalLabel">Sign up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Learn on your own time from top universities and businesses.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@email.com">
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" placeholder="Create password">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <small class="form-text text-muted">Between 8 and 72 characters</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Join for Free</button>
+                    </form>
+                    <div class="divider">or</div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                            Google
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook">
+                            Facebook
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGwnqOoimbGVauO_Epd7KSg2yiULj9joRsGw&s" alt="
+                                Apple">
+                            Apple
+                        </button>
+                    </div>
+                    <p class="text-center mt-3">
+                        Already on Coursera? <a href="#" class="text-decoration-none">Log in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Course 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card position-relative">
+                    <div class="new-badge">New AI skills</div>
+                    <img src="https://i.ytimg.com/vi/GbL-42kv5LI/maxresdefault.jpg" class="card-img-top" alt="Google Data Analytics">
+                    <div class="card-body">
+                        <h5 class="card-title">Google Data Analytics</h5>
+                        <p class="card-text">Professional Certificate</p>
+                        <a href="#" class="btn btn-primary">Build toward a degree</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card position-relative">
+                    <div class="new-badge">New AI skills</div>
+                    <img src="https://learningtoday.net/wp-content/uploads/2024/02/google-project-management-professional-certificate.webp" class="card-img-top" alt="Google Project Management">
+                    <div class="card-body">
+                        <h5 class="card-title">Google Project Management</h5>
+                        <p class="card-text">Professional Certificate</p>
+                        <a href="#" class="btn btn-primary">Build toward a degree</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card position-relative">
+                    <div class="new-badge">New AI skills</div>
+                    <img src="https://mwcc.edu/wp-content/uploads/2020/09/Google-IT-Professional-Certificate-Logo.png" class="card-img-top" alt="Google IT Support">
+                    <div class="card-body">
+                        <h5 class="card-title">Google IT Support</h5>
+                        <p class="card-text">Professional Certificate</p>
+                        <a href="#" class="btn btn-primary">Build toward a degree</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card position-relative">
+                    <div class="new-badge">New AI skills</div>
+                    <img src="https://media.licdn.com/dms/image/v2/D4D12AQGYpGwg4sqWJA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1701628194205?e=2147483647&v=beta&t=G8gBhKb75Ae-12yGI9vcdx6qhC6by_g7xcJYsuI5QMQ" class="card-img-top" alt="Google UX Design">
+                    <div class="card-body">
+                        <h5 class="card-title">Google UX Design</h5>
+                        <p class="card-text">Professional Certificate</p>
+                        <a href="#" class="btn btn-primary">Build toward a degree</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card position-relative">
+                    <div class="ai-badge">AI skills</div>
+                    <img src="https://media.licdn.com/dms/image/D4D12AQFIBwpivb1SWQ/article-cover_image-shrink_720_1280/0/1703147498824?e=2147483647&v=beta&t=0QbO2jACul2mpw7fZ_t1xOd40y78NXqcK4bUAu72ZCw" class="card-img-top" alt="IBM Data Science">
+                    <div class="card-body">
+                        <h5 class="card-title">IBM Data Science</h5>
+                        <p class="card-text">Professional Certificate</p>
+                        <a href="#" class="btn btn-primary">Build toward a degree</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card position-relative">
+                    <div class="ai-badge">AI skills</div>
+                    <img src="https://media.licdn.com/dms/image/v2/D560DAQEsE34-vhd3Vg/learning-public-banner-crop_300_1400/learning-public-banner-crop_300_1400/0/1688119349766?e=2147483647&v=beta&t=QTzRLh8-Wxdv7v3Xtd01ng7KyXsNzfU03HSkj1LSRdg" class="card-img-top" alt="University of London">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Science Foundations</h5>
+                        <p class="card-text">Specialization</p>
+                        <a href="#" class="btn btn-primary">Learn more</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 7 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card position-relative">
+                    <div class="ai-badge">AI skills</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAjHjDz-gzq76zZP5wGpCWIqqFjEAEViy7vA&s" class="card-img-top" alt="IBM Data Analyst">
+                    <div class="card-body">
+                        <h5 class="card-title">IBM Data Analyst</h5>
+                        <p class="card-text">Professional Certificate</p>
+                        <a href="#" class="btn btn-primary">Build toward a degree</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 8 -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card position-relative">
+                    <img src="https://innovationorigins.com/app/uploads/2023/04/brewbart_a_professor_in_front_of_a_huge_blackboard_on_which_pic_dcd36ebb-d28e-451e-a19c-51b172177cdb.png" class="card-img-top"
+                        alt="Key Technologies for Business">
+                    <div class="card-body">
+                        <h5 class="card-title">Key Technologies for Business</h5>
+                        <p class="card-text">Specialization</p>
+                        <a href="#" class="btn btn-primary">Learn more</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add additional courses similarly -->
+        </div>
+    </div>
+
+    
+     <!-- Footer -->
+     <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Coursera | Browse Computer Science | All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

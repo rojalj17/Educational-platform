@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnify</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .heading {
+            font-size: 30px;
+
+        }
+
+        /* login modal */
+        .modal-header {
+            border-bottom: none;
+            
+        }
+        
+        .modal-content {
+            border-radius: 8px;
+        }
+
+        .btn-social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .btn-social img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+            margin: 0 10px;
+        }
+
+        .hero-section {
+            background-color: rgb(116, 133, 202);
+            padding: 50px 15px;
+            text-align: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: right;
+        }
+
+        .hero-image img {
+            max-width: 300px;
+            border-radius: 50%;
+        }
+
+
+        .btn-primary {
+            background-color: #0056d2;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #003c99;
+        }
+
+        .img1 {
+            /* position: absolute; */
+            background-color: whitesmoke;
+            width: 700px;
+            height: 300px;
+            border-radius: 50%;
+            top: 20px;
+            left: calc(50% - 150px);
+            z-index: -1;
+
+        }
+
+        /* explore roles */
+
+        .card-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+
+        }
+
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .explore {
+            margin-top: 280px;
+        }
+
+
+        /* next section */
+        .card {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card img {
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .badge-new {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #0d6efd;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .btn-primary,
+        .btn-outline-primary {
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        /* next section */
+        .course-card {
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .course-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .course-card:hover {
+            transform: scale(1.02);
+        }
+
+        .course-card .card-body {
+            flex: 1;
+            padding: 15px;
+        }
+
+        .course-card .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .course-card .card-text {
+            color: gray;
+            font-size: 0.9rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand text-primary heading" href="#home">Learnify</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark " href="#h">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark " href="./explore.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark " href="./programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark  " data-bs-toggle="modal" data-bs-target="#loginModal"
+                            href="./programs.html">Log In</a>
+                    </li>
+                    <button data-bs-toggle="modal" data-bs-target="#signUpModal">Join For free</button>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Modal for log in -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="loginModalLabel">Welcome back</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@email.com">
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Enter your password">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <a href="#" class="text-decoration-none d-block mt-2">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+                    </form>
+                    <div class="divider">or</div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                            Google
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook">
+                            Facebook
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGwnqOoimbGVauO_Epd7KSg2yiULj9joRsGw&s"
+                                alt="Apple">
+                            Apple
+                        </button>
+                    </div>
+                    <p class="text-center mt-3">
+                        New to the platform? <a href="#" class="text-decoration-none">Sign up</a>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="text-decoration-none mx-auto">Log in with your organization</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal join for free -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title " id="signUpModalLabel">Sign up</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Learn on your own time from top universities and businesses.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@email.com">
+                        </div>
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" placeholder="Create password">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <small class="form-text text-muted">Between 8 and 72 characters</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-3">Join for Free</button>
+                    </form>
+                    <div class="divider">or</div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                            Google
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook">
+                            Facebook
+                        </button>
+                        <button class="btn btn-outline-secondary btn-social">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGwnqOoimbGVauO_Epd7KSg2yiULj9joRsGw&s"
+                                alt="Apple">
+                            Apple
+                        </button>
+                    </div>
+                    <p class="text-center mt-3">
+                        Already on Coursera? <a href="#" class="text-decoration-none">Log in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- about -->
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-5 mt-5">
+                    <div class="hero-text">
+                        <h1 class="display-5 fw-bold">Learn without limits</h1>
+                        <p class="lead">Start, switch, or advance your career with more than 7,000 courses, Professional
+                            Certificates, and degrees from world-class universities and companies.</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-primary me-2">Join For Free</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 hero-image">
+                    <!-- <div class="blue-circle "></div> -->
+                    <img class="img1" src="./media/logo.png" alt="Woman smiling">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- next section -->
+
+    <section class="partners-section py-5 bg-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">We collaborate with <span class="text-primary">350+ leading universities and
+                    companies</span></h2>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKBBHcrGwThgh-iDj66DXDo8h-UQ7iXL9YRw&s"
+                        alt="Illinois" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuTPWlKZ2B6-mRjW3lnvB--0W1ciOWzksGXkWDpRISg1UB4bwCRY8KRPOGro7hcfVMz_Y&usqp=CAU"
+                        alt="Duke" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/image2.jpg?width=454&name=image2.jpg"
+                        alt="Google" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREHu076L-poQPEDCMHhEdmJH_3JmqaYg2llA&s"
+                        alt="University of Michigan" class="img-fluid">
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="https://blog.logomaster.ai/hs-fs/hubfs/ibm-logo-2.jpg?width=672&height=448&name=ibm-logo-2.jpg"
+                        alt="IBM" class="img-fluid">
+                </div>
+                <!-- <div class="col-6 col-md-2 mb-3">
+          <img src="https://via.placeholder.com/100x50?text=Imperial+College" alt="Imperial College London" class="img-fluid">
+        </div> -->
+                <div class="col-6 col-md-2 mb-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwGvLFSq-Loq-F5PbYwcGOMfJlAhjsLpt6g83VhL2GFBf1h4NFx4SJdUA43rb5jxaRfyA&usqp=CAU"
+                        alt="Stanford" class="img-fluid">
+                </div>
+                <!-- <div class="col-6 col-md-2 mb-3">
+          <img src="https://via.placeholder.com/100x50?text=Penn" alt="University of Pennsylvania" class="img-fluid">
+        </div>
+      </div> -->
+            </div>
+    </section>
+
+    <!-- explore roles -->
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-3  explore">
+                    <h3 class="fw-bold ">Choose your role</h3>
+                    <p>Gain the knowledge and skills you need to advance.</p>
+                    <button class="btn btn-primary"><a class="text-decoration-none text-light"
+                            href="./explore.html">Explore all roles</a></button>
+                </div>
+
+                <!-- Role Cards -->
+                <div class="col-md-9">
+                    <div class="row">
+                        <!-- Data Scientist Card -->
+                        <div class="col-md-4">
+                            <div class="card p-3">
+                                <img src="https://img.freepik.com/free-photo/assertive-determined-man-with-beard-points-himself_273609-40657.jpg"
+                                    alt="Data Scientist" class="card-img-top mx-auto d-block">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Data Scientist</h5>
+                                    <p class="card-text">A Data Scientist analyzes large datasets to uncover insights,
+                                        using statistics, machine learning, and visualization to inform business
+                                        strategies.</p>
+                                    <p><strong>If you like:</strong> analyzing complex datasets, developing machine
+                                        learning models, solving statistical problems</p>
+                                    <p><strong>₹371,772</strong> median salary<br><strong>34,719</strong> jobs available
+                                    </p>
+                                    <p><strong>Credentials:</strong></p>
+                                    <a href="#" class="text-decoration-none">IBM Data Science</a>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Data Analyst Card -->
+                        <div class="col-md-4">
+                            <div class="card p-3">
+                                <img src="https://img.freepik.com/free-photo/medium-shot-man-with-paperwork_23-2150379191.jpg"
+                                    alt="Data Analyst" class="card-img-top mx-auto d-block">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Data Analyst</h5>
+                                    <p class="card-text">A Data Analyst collects, cleans, and interprets data, using
+                                        tools like Excel, SQL, and Tableau to analyze trends and provide insights for
+                                        decisions.</p>
+                                    <p><strong>If you like:</strong> analyzing data to find insights, creating reports
+                                        and visualizations, working with spreadsheets and databases</p>
+                                    <p><strong>₹278,193</strong> median salary<br><strong>27,566</strong> jobs available
+                                    </p>
+                                    <p><strong>Credentials:</strong></p>
+                                    <a href="#" class="text-decoration-none">Meta Data Analyst</a><br>
+                                    <a href="#" class="text-decoration-none">IBM Data Analyst</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Strategist Card -->
+                        <div class="col-md-4">
+                            <div class="card p-3">
+                                <img src="https://img.freepik.com/free-photo/photo-surprised-male-adult-with-funny-facial-expression-holds-chin-has-dark-stubble-carries-opened-book_273609-23728.jpg"
+                                    alt="Social Media Strategist" class="card-img-top mx-auto d-block">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Social Media Strategist</h5>
+                                    <p class="card-text">A Social Media Strategist develops and executes campaigns to
+                                        boost brand awareness and engagement while analyzing metrics.
+                                        content.</p>
+                                    <p><strong>If you like:</strong> creating engaging content for social media,
+                                        analyzing social media performance.</p>
+                                    <p><strong>₹185,819</strong> median salary<br><strong>28,967</strong> jobs available
+                                    </p>
+                                    <p><strong>Credentials:</strong></p>
+                                    <a href="#" class="text-decoration-none">Meta Social Media Marketing</a><br>
+                                    <a href="#" class="text-decoration-none">Marketing with TikTok</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- next section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <!-- Heading Section -->
+            <div class="text-center mb-5">
+                <h5 class="text-uppercase text-muted">Specializations and Professional Certificates</h5>
+                <h2 class="fw-bold">Most Popular Certificates</h2>
+                <p>Explore our most popular programs, get job-ready for an in-demand career.</p>
+            </div>
+            <!-- Cards Section -->
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-3">
+                    <div class="card position-relative shadow-sm">
+                        <span class="badge-new">New AI skills</span>
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/41/4d3d7c05fb42729c9d90352e072ca3/1060x596_GCC-photos_Karrim.png?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
+                            alt="Google Data Analytics" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Google Data Analytics</h5>
+                            <p class="mb-1">Google</p>
+                            <p class="text-muted small">Professional Certificate</p>
+                            <a href="#" class="text-decoration-none small text-primary">Build toward a degree</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-3">
+                    <div class="card position-relative shadow-sm">
+                        <span class="badge-new">New AI skills</span>
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/bf/b07da9bbe24cb8b0daa00010ff8b22/1060x596_GCC-photos_Ashley.png?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
+                            alt="Google Project Management" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Google Project Management</h5>
+                            <p class="mb-1">Google</p>
+                            <p class="text-muted small">Professional Certificate</p>
+                            <a href="#" class="text-decoration-none small text-primary">Build toward a degree</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-3">
+                    <div class="card position-relative shadow-sm">
+                        <span class="badge-new">New AI skills</span>
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/e7/246d5ceb234f5bb50ec6b6cf361339/Amie-Hanbury-Hero-Image-.jpg?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
+                            alt="Google IT Support" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Google IT Support</h5>
+                            <p class="mb-1">Google</p>
+                            <p class="text-muted small">Professional Certificate</p>
+                            <a href="#" class="text-decoration-none small text-primary">Build toward a degree</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-3">
+                    <div class="card position-relative shadow-sm">
+                        <span class="badge-new">New AI skills</span>
+                        <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/f9/f48728d31a4af3b8eba082c0b4cb18/1060x596_GCC-photos-1-.png?auto=format%2Ccompress%2C%20enhance&dpr=1&w=320&h=180&fit=crop&q=50&crop=faces"
+                            alt="Google UX Design" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Google UX Design</h5>
+                            <p class="mb-1">Google</p>
+                            <p class="text-muted small">Professional Certificate</p>
+                            <a href="#" class="text-decoration-none small text-primary">Build toward a degree</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Button Section -->
+            <div class="text-center mt-4">
+                <a class="text-decoration-none" href="./programs.html">
+                    <button class="btn btn-outline-primary px-4">View all</button>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- next section -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Heading Section -->
+            <div class="text-center mb-5">
+                <h1 class="fw-bold">Explore Learnify</h1>
+            </div>
+            <!-- Cards Section -->
+            <div class="row g-3">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <a class="text-decoration-none" href="./datascience.html">
+                            <img src="https://plus.unsplash.com/premium_photo-1661878265739-da90bc1af051?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGF0YSUyMHNjaWVuY2V8ZW58MHx8MHx8fDA%3D"
+                                alt="Data Science">
+                            <div class="card-body">
+                                <h5 class="card-title">Data Science</h5>
+                                <p class="card-text">425 courses</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <a class="text-decoration-none" href="./business.html">
+                            <img src="https://online.hbs.edu/Style%20Library/api/resize.aspx?imgpath=/PublishingImages/overhead-view-of-business-strategy-meeting.jpg&w=1200&h=630"
+                                alt="Business">
+                            <div class="card-body">
+                                <h5 class="card-title">Business</h5>
+                                <p class="card-text">1095 courses</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <a class="text-decoration-none" href="./computerscience.html">
+                            <img src="https://static.wixstatic.com/media/0c0246_8a9e99ebe7ee4c458782203abcc47694~mv2.jpg/v1/fill/w_560,h_372,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/0c0246_8a9e99ebe7ee4c458782203abcc47694~mv2.jpg"
+                                alt="Computer Science">
+                            <div class="card-body">
+                                <h5 class="card-title">Computer Science</h5>
+                                <p class="card-text">668 courses</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <a class="text-decoration-none" href="./health.html">
+                            <img src="https://health-e.in/wp-content/uploads/2023/12/healthcare-concept-with-futuristic-design-graphics-medical-treatment-icons.webp"
+                                alt="Health">
+                            <div class="card-body">
+                                <h5 class="card-title">Health</h5>
+                                <p class="card-text">471 courses</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <a class="text-decoration-none" href="./social.html">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwDPrmdAv14-CSCH-qZjXnQEwEu42-1JT33w&s"
+                                alt="Social Sciences">
+                            <div class="card-body">
+                                <h5 class="card-title">Social Sciences</h5>
+                                <p class="card-text">401 courses</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="col-md-4">
+                    <div class="card course-card">
+                        <a class="text-decoration-none" href="./personaldevelopment.html">
+                            <img src="https://www.matrrix.in/images/blog/1000xnull/understanding-5-areas-of-personal-development-feature641d6028520d78.69103709.webp"
+                                alt="Personal Development">
+                            <div class="card-body">
+                                <h5 class="card-title">Personal Development</h5>
+                                <p class="card-text">137 courses</p>
+                            </div>
+
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
